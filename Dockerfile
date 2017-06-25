@@ -8,4 +8,6 @@ COPY ${PWD}/files/nginx.sh /nginx.sh
 RUN apt-get update \
     && apt-get install -y wget build-essential zlib1g-dev libpcre3 libpcre3-dev unzip libssl-dev \
     && bash /nps.sh \
-    && bash /nginx.sh
+    && bash /nginx.sh \
+    && mkdir /var/ngx_pagespeed_cache \
+    && chmod -R a+rw /var/ngx_pagespeed_cache
